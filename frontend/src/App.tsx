@@ -1,12 +1,15 @@
-// src/App.tsx
-import React from 'react';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import SideBar from './SideBar'
 
-const App: React.FC = () => {
+function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600">Hello, Vite + React + Tailwind!</h1>
+    <div className='flex' >
+      <SideBar/>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
