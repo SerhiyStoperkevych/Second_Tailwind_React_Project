@@ -1,19 +1,17 @@
-import express, { Request, Response } from 'express';
-import cors from 'cors';
+import express from "express";
+import http from 'http';
+import connectDB from "./database";
+import configureApp from "./app";
 
+const port = 3001;
 const app = express();
-const port = process.env.PORT || 3000;
+const server = http.createServer(app);
 
-app.use(cors());
+connectDB();
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!');
-});
+configureApp(app);
 
-app.get('/api/message', (req: Request, res: Response) => {
-  res.json({ message: 'Hello from backend!' });
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+server.listen(port, () => {
+  console.log(`Local Host is running on http://localhost:${port}`)
+  }
+);

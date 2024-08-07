@@ -1,14 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react';
 import './App.css'
-import SideBar from './SideBar'
+import { Route, Routes, Navigate } from 'react-router-dom';
+import Menu from './components/Menu';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className='flex' >
-      <SideBar/>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Navigate to='/signIn' />} />
+        <Route path="/signIn" element={<SignIn />} />
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="/menu" element={<Menu />} />
+      </Routes>
+    </>
   )
 }
 
