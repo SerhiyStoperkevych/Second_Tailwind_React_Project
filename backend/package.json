@@ -12,10 +12,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/socket.io": "^3.0.2",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "mongoose": "^8.5.2"
+    "mongoose": "^8.5.2",
+    "socket.io": "^4.7.5"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
