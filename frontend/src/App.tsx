@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css'
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Menu from './components/Menu';
 import SignIn from './components/SignIn';
@@ -17,7 +16,7 @@ const App: React.FC = () => {
         <Route path="/menu/chat" element={<Chat />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -23,6 +23,5 @@ const io = new Server(server, {
 configureSocket(io);
 
 server.listen(port, () => {
-  console.log(`Local Host is running on http://localhost:${port}`)
-  }
-);
+  console.log(`Local Host is running on http://localhost:${port}`);
+});
