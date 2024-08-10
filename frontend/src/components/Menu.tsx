@@ -9,6 +9,7 @@ const Menu: React.FC = () => {
     <div>
       <h1>Wellcome to the Menu</h1>
       <button onClick={() => navigate('/menu/chat')} >Chat</button>
+      <button onClick={() => navigate('/menu/test')} >Test</button>
     </div>
   )
 }
