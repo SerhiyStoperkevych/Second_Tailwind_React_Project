@@ -5,6 +5,7 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Chat from './components/Chat';
 import Test from './components/Test';
+import Clone from './components/clone/Clone';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         <Route path="/menu" element={<Menu />} />
         <Route path="/menu/chat" element={<Chat />} />
         <Route path="/menu/test" element={<Test />} />
+        <Route path="/menu/clone" element={<Clone />} />
       </Routes>
     </>
   );

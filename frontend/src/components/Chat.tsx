@@ -71,17 +71,25 @@ const Chat: React.FC = () => {
                     />
                 </div>
                 <div className='flex flex-col w-full'>
-                    <div className='flex flex-col'>
-                        {allMessages.map((msg, index) => (
-                            <div key={index} className='bg-green-300 rounded-lg py-2 px-6 mb-4 text-left self-start'>
-                                <p>{msg.username}:</p>
-                                <p>{msg.text}</p>
-                            </div>
-                        ))}
-                    </div>
+                <div className="flex flex-col w-full">
+                    {allMessages.map((msg, index) => (
+                        <div
+                            key={index}
+                            className={`max-w-xs md:max-w-md lg:max-w-lg p-3 mb-3 rounded-lg shadow-md transition-transform transform ${
+                                msg.username === username
+                                    ? 'bg-blue-500 text-white self-end animate-slide-in-right'
+                                    : 'bg-gray-300 text-gray-800 self-start animate-slide-in-left'
+                            }`}
+                        >
+                            <div className="font-semibold mb-1">{msg.username}:</div>
+                            <div>{msg.text}</div>
+                            <div className="text-xs text-gray-400 mt-1 text-right">{/* Timestamp here */}</div>
+                        </div>
+                    ))}
+                </div>
                     <div className='flex flex-col'>
                         {userMessages.map((msg, index) => (
-                            <div key={index} className='bg-blue-300 rounded-lg py-2 px-6 mb-4 text-right self-end'>
+                            <div key={index} className='bg-blue-300 rounded-lg py-2 px-6 mb-4 text-right self-end animate-slide-in-up'>
                                 <p>{msg.username}:</p>
                                 <p>{msg.text}</p>
                             </div>
@@ -90,8 +98,12 @@ const Chat: React.FC = () => {
                 </div>
                 <div className='flex justify-end mt-4'>
                     <button
-                        onClick={sendText}                
-                        className='border px-6 py-1 rounded-lg bg-blue-300 hover:bg-blue-500 hover:ring-2 hover:ring-blue-300 cursor-pointer'
+                        onClick={(e) => {
+                            sendText();
+                            e.currentTarget.blur();
+                        }
+                        }                
+                        className='border px-6 py-1 rounded-lg bg-blue-300 hover:bg-blue-500 hover:ring-2 hover:ring-blue-300 cursor-pointer focus:animate-ring-ping transition-all duration-300'
                     >
                         Send
                     </button>
