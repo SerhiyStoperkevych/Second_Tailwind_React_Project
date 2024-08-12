@@ -2,9 +2,9 @@ import axios from "axios";
 
 const API_URL = '';
 
-const api = {
+const api = axios.create({
     baseURL: API_URL
-}
+})
 
 export const aetAuthToken = (token: string | null) => {
     if (token) {
